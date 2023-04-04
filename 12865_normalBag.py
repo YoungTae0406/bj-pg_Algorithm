@@ -25,13 +25,18 @@ import sys
 read = sys.stdin.readline
 
 N, K = map(int, read().split())
-cache = [0] * (K+1)
+cache = [0] * (K+1) # 인덱스 : 무게, 값 : 가치
 
 for _ in range(N):
     w, v = map(int, read().split())
     for j in range(K, w-1, -1):
         cache[j] = max(cache[j], cache[j-w] + v)
+        # 기존의 무게j일때 가치와 물건(무게w이고 가치v인)을 넣었을 때의 가치 중 최댓값
+        
 print(cache[-1])
+
+#
+# 거꾸로 접근.
 
 #================================================#
 

@@ -10,6 +10,7 @@ for c in coin:
     for p in range(c, k+1):
         if p-c >= 0:
             dp[p] = min(dp[p], dp[p-c]+1)
+            # dp[p]는 가치가 p일 때 동전의 개수.
 
 if dp[k] != 10001:
     print(dp[k])

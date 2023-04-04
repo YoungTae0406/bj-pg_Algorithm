@@ -19,10 +19,3 @@ for i in range(1, 51):
     if len(word[i]) == 0:
         continue
     print(*word[i], sep="\n")
-
-
-
-
-
-
-
